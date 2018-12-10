@@ -1,17 +1,19 @@
 ﻿Imports System.Windows
 Imports System.Windows.Controls
 Imports SkyEditor.Core
-Imports SkyEditor.Core.UI
 Imports SkyEditor.Core.Settings
+Imports SkyEditor.Core.UI
 
 Public Class TargetedContextMenu
     Inherits ContextMenu
 
     Public Shared ReadOnly CurrentApplicationViewModelProperty As DependencyProperty = DependencyProperty.Register(NameOf(CurrentApplicationViewModel), GetType(ApplicationViewModel), GetType(TargetedContextMenu), New FrameworkPropertyMetadata(AddressOf OnCurrentPluginManagerChanged))
     Public Shared ReadOnly ObjectToEditProperty As DependencyProperty = DependencyProperty.Register(NameOf(Target), GetType(Object), GetType(TargetedContextMenu), New FrameworkPropertyMetadata(AddressOf OnTargetChanged))
+
     Private Shared Sub OnCurrentPluginManagerChanged(d As DependencyObject, e As DependencyPropertyChangedEventArgs)
         DirectCast(d, ObjectControlPlaceholder).CurrentApplicationViewModel = e.NewValue
     End Sub
+
     Private Shared Sub OnTargetChanged(d As DependencyObject, e As DependencyPropertyChangedEventArgs)
         DirectCast(d, TargetedContextMenu).Target = e.NewValue
     End Sub
@@ -36,6 +38,7 @@ Public Class TargetedContextMenu
             UpdateDataContext()
         End Set
     End Property
+
     Dim _target As Object
 
     Protected Property CurrentApplicationViewModel As ApplicationViewModel

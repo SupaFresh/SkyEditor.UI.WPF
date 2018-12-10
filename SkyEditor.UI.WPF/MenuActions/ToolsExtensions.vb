@@ -3,6 +3,7 @@ Imports SkyEditor.Core.Extensions
 Imports SkyEditor.Core.UI
 
 Namespace MenuActions
+
     Public Class ToolsExtensions
         Inherits MenuAction
 
@@ -21,5 +22,5 @@ Namespace MenuActions
         End Sub
 
     End Class
-End Namespace
 
+End Namespace

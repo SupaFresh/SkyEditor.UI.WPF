@@ -1,8 +1,6 @@
 ﻿Imports System.Reflection
 Imports System.Windows.Controls
-Imports SkyEditor.Core
 Imports SkyEditor.Core.UI
-Imports SkyEditor.Core.Utilities
 
 <Obsolete("Will be deleted in the future.  Use DataBoundObjectControl instead.")> Public MustInherit Class ObjectControl
     Inherits UserControl
@@ -27,7 +25,7 @@ Imports SkyEditor.Core.Utilities
     ''' </summary>
     ''' <returns></returns>
     Public Overridable Function GetSupportedTypes() As IEnumerable(Of TypeInfo) Implements IViewControl.GetSupportedTypes
-        Dim context = Me.DataContext
+        Dim context = DataContext
         If context IsNot Nothing Then
             Return context.GetType
         Else
@@ -80,6 +78,7 @@ Imports SkyEditor.Core.Utilities
             RaiseEvent HeaderUpdated(Me, New HeaderUpdatedEventArgs With {.NewValue = value})
         End Set
     End Property
+
     Dim _header As String
 
     ''' <summary>
@@ -128,6 +127,7 @@ Imports SkyEditor.Core.Utilities
             RefreshDisplay()
         End Set
     End Property
+
     Dim _editingObject As Object
 
     ''' <summary>
@@ -148,5 +148,6 @@ Imports SkyEditor.Core.Utilities
             End If
         End Set
     End Property
+
     Dim _isModified As Boolean
 End Class

@@ -4,6 +4,7 @@ Imports SkyEditor.Core
 Imports SkyEditor.Core.UI
 
 Public Module IOUIManagerExtensions
+
     ''' <summary>
     ''' Gets an OpenFileDialog that can open any supported file.
     ''' </summary>
@@ -43,4 +44,5 @@ Public Module IOUIManagerExtensions
         s.FilterIndex = extensions.ToList.IndexOf(file.GetDefaultExtension(manager)) + 1
         Return s
     End Function
+
 End Module

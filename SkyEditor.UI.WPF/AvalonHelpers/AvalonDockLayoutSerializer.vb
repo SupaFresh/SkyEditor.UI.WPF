@@ -10,37 +10,40 @@ Namespace AvalonHelpers
     ''' Class implements an attached behavior to load/save a layout for AvalonDock manager.
     ''' This layout defines the position and shape of each document and tool window
     ''' displayed in the application.
-    ''' 
+    '''
     ''' Load/Save is triggered through command binding
     ''' On application start (AvalonDock.Load event results in LoadLayoutCommand) and
     '''    application shutdown (AvalonDock.Unload event results in SaveLayoutCommand).
-    ''' 
+    '''
     ''' This implementation of layout save/load is MVVM compliant, robust, and simple to use.
     ''' Just add the following code into your XAML:
-    ''' 
+    '''
     ''' xmlns:AVBehav="clr-namespace:Edi.View.Behavior"
     ''' ...
-    ''' 
-    ''' avalonDock:DockingManager AnchorablesSource="{Binding Tools}" 
+    '''
+    ''' avalonDock:DockingManager AnchorablesSource="{Binding Tools}"
     '''                           DocumentsSource="{Binding Files}"
     '''                           ActiveContent="{Binding ActiveDocument, Mode=TwoWay, Converter={StaticResource ActiveDocumentConverter}}"
     '''                           Grid.Row="3"
     '''                           SnapsToDevicePixels="True"
     '''                AVBehav:AvalonDockLayoutSerializer.LoadLayoutCommand="{Binding LoadLayoutCommand}"
     '''                AVBehav:AvalonDockLayoutSerializer.SaveLayoutCommand="{Binding SaveLayoutCommand}"
-    '''                
+    '''
     ''' The LoadLayoutCommand passes a reference of the AvalonDock Manager instance to load the XML layout.
     ''' The SaveLayoutCommand passes a string of the XML Layout which can be persisted by the viewmodel/model.
-    ''' 
+    '''
     ''' Both command bindings work with RoutedCommands or delegate commands (RelayCommand).
-    ''' 
+    '''
     ''' Credit to Dirk Bahle for implementation
     ''' http://www.codeproject.com/Articles/719143/AvalonDock-Tutorial-Part-Load-Save-Layout
     ''' </remarks>
     Public NotInheritable Class AvalonDockLayoutSerializer
+
         Private Sub New()
         End Sub
+
 #Region "fields"
+
         ''' <summary>
         ''' Backing store for LoadLayoutCommand dependency property
         ''' </summary>
@@ -50,10 +53,13 @@ Namespace AvalonHelpers
         ''' Backing store for SaveLayoutCommand dependency property
         ''' </summary>
         Private Shared ReadOnly SaveLayoutCommandProperty As DependencyProperty = DependencyProperty.RegisterAttached("SaveLayoutCommand", GetType(ICommand), GetType(AvalonDockLayoutSerializer), New PropertyMetadata(Nothing, AddressOf OnSaveLayoutCommandChanged))
+
 #End Region
 
 #Region "methods"
+
 #Region "Load Layout"
+
         ''' <summary>
         ''' Standard get method of <seealso cref="LoadLayoutCommandProperty"/> dependency property.
         ''' </summary>
@@ -120,9 +126,11 @@ Namespace AvalonHelpers
                 loadLayoutCommand.Execute(frameworkElement)
             End If
         End Sub
+
 #End Region
 
 #Region "Save Layout"
+
         ''' <summary>
         ''' Standard get method of <seealso cref="SaveLayoutCommandProperty"/> dependency property.
         ''' </summary>
@@ -199,9 +207,13 @@ Namespace AvalonHelpers
                 SaveLayoutCommand.Execute(xmlLayoutString)
             End If
         End Sub
+
 #End Region
+
 #End Region
+
     End Class
+
 End Namespace
 
 '=======================================================

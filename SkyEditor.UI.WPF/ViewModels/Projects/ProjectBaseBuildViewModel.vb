@@ -5,6 +5,7 @@ Imports SkyEditor.Core.UI
 Imports SkyEditor.Core.Utilities
 
 Namespace ViewModels.Projects
+
     Public Class ProjectBaseBuildViewModel
         Inherits GenericViewModel(Of ProjectBase)
         Implements INotifyPropertyChanged
@@ -80,5 +81,7 @@ Namespace ViewModels.Projects
             RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(NameOf(BuildProgress)))
             RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(NameOf(IsBuildProgressIndeterminate)))
         End Sub
+
     End Class
+
 End Namespace

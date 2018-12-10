@@ -13,4 +13,5 @@ Public Class AddingSolution
     Public Overrides Function GetInitializationWizard() As Wizard
         Return New AddingWizard(CurrentPluginManager)
     End Function
+
 End Class

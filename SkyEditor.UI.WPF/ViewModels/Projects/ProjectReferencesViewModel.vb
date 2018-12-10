@@ -4,6 +4,7 @@ Imports SkyEditor.Core.Projects
 Imports SkyEditor.Core.UI
 
 Namespace ViewModels.Projects
+
     Public Class ProjectReferencesViewModel
         Inherits GenericViewModel(Of Project)
         Implements INotifyPropertyChanged
@@ -21,6 +22,7 @@ Namespace ViewModels.Projects
                 End If
             End Set
         End Property
+
         Private _projectReferences As New ObservableCollection(Of String)
 
         Public Overrides Sub SetModel(model As Object)
@@ -34,5 +36,7 @@ Namespace ViewModels.Projects
 
             DirectCast(model, Project).ProjectReferenceNames = ProjectReferences.ToList()
         End Sub
+
     End Class
+
 End Namespace

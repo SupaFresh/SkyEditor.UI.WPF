@@ -3,6 +3,7 @@ Imports SkyEditor.Core
 Imports SkyEditor.Core.Utilities
 
 Namespace Models
+
     Public Class CreditsModel
         Implements INotifyPropertyChanged
         Implements INamed
@@ -43,6 +44,7 @@ Namespace Models
         Dim _selectedPlugin As SkyEditorPlugin
 
         Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
-    End Class
-End Namespace
 
+    End Class
+
+End Namespace

@@ -1,9 +1,5 @@
-﻿Imports System
-Imports System.Reflection
+﻿Imports System.Reflection
 Imports System.Runtime.InteropServices
-Imports System.Globalization
-Imports System.Resources
-Imports System.Windows
 
 ' General Information about an assembly is controlled through the following
 ' set of attributes. Change these attribute values to modify the information
@@ -17,7 +13,7 @@ Imports System.Windows
 <Assembly: AssemblyProduct("ManualTestingForm")>
 <Assembly: AssemblyCopyright("Copyright ©  2018")>
 <Assembly: AssemblyTrademark("")>
-<Assembly: ComVisible(false)>
+<Assembly: ComVisible(False)>
 
 'In order to begin building localizable applications, set
 '<UICulture>CultureYouAreCodingWith</UICulture> in your .vbproj file
@@ -28,7 +24,6 @@ Imports System.Windows
 
 '<Assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.Satellite)>
 
-
 'The ThemeInfo attribute describes where any theme specific and generic resource dictionaries can be found.
 '1st parameter: where theme specific resource dictionaries are located
 '(used if a resource is not found in the page,
@@ -38,8 +33,6 @@ Imports System.Windows
 '(used if a resource is not found in the page,
 'app, and any theme specific resource dictionaries)
 <Assembly: ThemeInfo(ResourceDictionaryLocation.None, ResourceDictionaryLocation.SourceAssembly)>
-
-
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
 <Assembly: Guid("a340f081-4402-4475-b57f-56431c41259c")>

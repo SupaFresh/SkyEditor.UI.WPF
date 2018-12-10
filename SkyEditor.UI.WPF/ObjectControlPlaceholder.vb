@@ -5,7 +5,6 @@ Imports System.Windows.Controls
 Imports SkyEditor.Core
 Imports SkyEditor.Core.IO
 Imports SkyEditor.Core.UI
-Imports SkyEditor.Core.Utilities
 
 Public Class ObjectControlPlaceholder
     Inherits UserControl
@@ -13,6 +12,7 @@ Public Class ObjectControlPlaceholder
 
     Public Shared ReadOnly CurrentApplicationViewModelProperty As DependencyProperty = DependencyProperty.Register(NameOf(CurrentApplicationViewModel), GetType(ApplicationViewModel), GetType(ObjectControlPlaceholder), New FrameworkPropertyMetadata(AddressOf OnCurrentApplicationViewModelChanged))
     Public Shared ReadOnly ObjectToEditProperty As DependencyProperty = DependencyProperty.Register(NameOf(ObjectToEdit), GetType(Object), GetType(ObjectControlPlaceholder), New FrameworkPropertyMetadata(AddressOf OnObjectToEditChanged))
+
     Private Shared Sub OnCurrentApplicationViewModelChanged(d As DependencyObject, e As DependencyPropertyChangedEventArgs)
         DirectCast(d, ObjectControlPlaceholder).CurrentApplicationViewModel = e.NewValue
     End Sub
@@ -23,9 +23,8 @@ Public Class ObjectControlPlaceholder
 
     Public Sub New()
         MyBase.New
-        Me.TabControlOrientation = Dock.Left
+        TabControlOrientation = Dock.Left
     End Sub
-
 
     ''' <summary>
     ''' Raised when the contained object raises its Modified event, if it implements iModifiable
@@ -60,10 +59,10 @@ Public Class ObjectControlPlaceholder
     ''' <returns></returns>
     Public Property ObjectToEdit As Object
         Get
-            If TypeOf Me.Content Is IViewControl Then
-                _object = DirectCast(Me.Content, IViewControl).ViewModel
-            ElseIf TypeOf Me.Content Is TabControl Then
-                For Each item In DirectCast(Me.Content, TabControl).Items
+            If TypeOf Content Is IViewControl Then
+                _object = DirectCast(Content, IViewControl).ViewModel
+            ElseIf TypeOf Content Is TabControl Then
+                For Each item In DirectCast(Content, TabControl).Items
                     If TypeOf item.Content Is IViewControl Then
                         _object = DirectCast(item.Content, IViewControl).ViewModel
                     End If
@@ -94,24 +93,23 @@ Public Class ObjectControlPlaceholder
                         If count > 1 Then
                             Dim tabControl As New TabControl
                             tabControl.TabStripPlacement = TabControlOrientation
-                            For Each item In WPFUiHelper.GenerateObjectTabs(tabs)
+                            For Each item In WpfUiHelper.GenerateObjectTabs(tabs)
                                 tabControl.Items.Add(item)
                                 AddHandler item.ContainedViewControl.IsModifiedChanged, AddressOf OnModified
                             Next
-                            Me.Content = tabControl
+                            Content = tabControl
 
                         ElseIf count = 1 Then
                             Dim control = tabs.First '(From t In ucTabs Where t.GetSortOrder(value.GetType, True) >= 0).First
-                            Me.Content = control
+                            Content = control
                             AddHandler control.IsModifiedChanged, AddressOf OnModified
                         Else
                             'Nothing is registered to edit this object.
                             Dim label As New Label
                             label.Content = String.Format(CultureInfo.InvariantCulture, My.Resources.Language.NoAvailableUI, value.GetType.FullName)
-                            Me.Content = label
+                            Content = label
                         End If
                     End If
-
                 Else
                     'Always one control
                     Dim objControl = UIHelper.GetViewControl(value, {GetType(UserControl)}, CurrentApplicationViewModel, CurrentApplicationViewModel.CurrentPluginManager)
@@ -121,12 +119,13 @@ Public Class ObjectControlPlaceholder
                         'Nothing is registered to edit this object.
                         Dim label As New Label
                         label.Content = String.Format(CultureInfo.InvariantCulture, My.Resources.Language.NoAvailableUI, value.GetType.FullName)
-                        Me.Content = label
+                        Content = label
                     End If
                 End If
             End If
         End Set
     End Property
+
     Dim _object As Object
 
     Public Property TabControlOrientation As Dock
@@ -142,6 +141,7 @@ Public Class ObjectControlPlaceholder
             End If
         End Set
     End Property
+
     Dim _currentApplicationViewModel As ApplicationViewModel
     Dim _pendingObject As Object
 
@@ -177,6 +177,7 @@ Public Class ObjectControlPlaceholder
     End Sub
 
 #Region "IDisposable Support"
+
     Private disposedValue As Boolean ' To detect redundant calls
 
     ' IDisposable

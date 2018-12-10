@@ -1,11 +1,11 @@
 ﻿Imports System.Reflection
-Imports System.Windows.Forms
 Imports SkyEditor.Core
 Imports SkyEditor.Core.IO
 Imports SkyEditor.Core.Projects
 Imports SkyEditor.Core.UI
 
 Namespace MenuActions
+
     Public Class FileSaveAll
         Inherits MenuAction
 
@@ -46,5 +46,5 @@ Namespace MenuActions
         End Sub
 
     End Class
-End Namespace
 
+End Namespace

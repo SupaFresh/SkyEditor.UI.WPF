@@ -3,6 +3,7 @@ Imports SkyEditor.Core.UI
 Imports SkyEditor.UI.WPF.Models
 
 Namespace MenuActions
+
     Public Class FileHelpCredits
         Inherits MenuAction
 

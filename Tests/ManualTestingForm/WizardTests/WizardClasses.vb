@@ -30,6 +30,7 @@ Public Class AddingWizard
             Return "Adding Wizard"
         End Get
     End Property
+
 End Class
 
 Public Class AddingWizardTerm1
@@ -54,6 +55,7 @@ Public Class AddingWizardTerm1
             RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(NameOf(IsComplete)))
         End Set
     End Property
+
     Private _term1 As Integer? = 0
 
     Public ReadOnly Property IsComplete As Boolean Implements IWizardStepViewModel.IsComplete
@@ -65,6 +67,7 @@ Public Class AddingWizardTerm1
     Public Function GetConsoleCommand() As ConsoleCommand Implements IWizardStepViewModel.GetConsoleCommand
         Throw New NotImplementedException()
     End Function
+
 End Class
 
 Public Class AddingWizardTerm2
@@ -89,6 +92,7 @@ Public Class AddingWizardTerm2
             RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(NameOf(IsComplete)))
         End Set
     End Property
+
     Private _term2 As Integer?
 
     Public ReadOnly Property IsComplete As Boolean Implements IWizardStepViewModel.IsComplete
@@ -100,6 +104,7 @@ Public Class AddingWizardTerm2
     Public Function GetConsoleCommand() As ConsoleCommand Implements IWizardStepViewModel.GetConsoleCommand
         Throw New NotImplementedException()
     End Function
+
 End Class
 
 Public Class AddingWizardResult
@@ -136,6 +141,7 @@ Public Class AddingWizardResult
             RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(NameOf(IsComplete)))
         End Set
     End Property
+
     Private _resultApproved As Boolean
 
     Public ReadOnly Property IsComplete As Boolean Implements IWizardStepViewModel.IsComplete
@@ -147,4 +153,5 @@ Public Class AddingWizardResult
     Public Function GetConsoleCommand() As ConsoleCommand Implements IWizardStepViewModel.GetConsoleCommand
         Throw New NotImplementedException()
     End Function
+
 End Class

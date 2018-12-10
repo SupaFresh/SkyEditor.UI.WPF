@@ -4,6 +4,7 @@ Imports SkyEditor.Core
 Imports SkyEditor.Core.UI
 
 Public Class WizardForm
+
     Public Sub New(wizard As Wizard, applicationViewModel As ApplicationViewModel)
 
         ' This call is required by the designer.
@@ -40,4 +41,5 @@ Public Class WizardForm
         DialogResult = True
         Me.Close()
     End Sub
+
 End Class

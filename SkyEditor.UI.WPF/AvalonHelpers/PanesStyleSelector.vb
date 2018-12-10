@@ -3,6 +3,7 @@ Imports System.Windows.Controls
 Imports SkyEditor.Core.UI
 
 Namespace AvalonHelpers
+
     Public Class PanesStyleSelector
         Inherits StyleSelector
 
@@ -19,6 +20,7 @@ Namespace AvalonHelpers
                 Return MyBase.SelectStyle(item, container)
             End If
         End Function
-    End Class
-End Namespace
 
+    End Class
+
+End Namespace

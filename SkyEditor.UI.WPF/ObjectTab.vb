@@ -17,35 +17,35 @@ Public Class ObjectTab
 
     Public Property ContainedViewControl As IViewControl
         Get
-            If TypeOf Me.Content Is IViewControl Then
-                Return Me.Content
+            If TypeOf Content Is IViewControl Then
+                Return Content
             Else
                 Return Nothing
             End If
         End Get
         Set(value As IViewControl)
-            If Me.Content IsNot Nothing AndAlso TypeOf Me.Content Is IViewControl Then
-                RemoveHandler DirectCast(Me.Content, IViewControl).HeaderUpdated, AddressOf OnContentHeaderChanged
+            If Content IsNot Nothing AndAlso TypeOf Content Is IViewControl Then
+                RemoveHandler DirectCast(Content, IViewControl).HeaderUpdated, AddressOf OnContentHeaderChanged
             End If
 
             If TypeOf value Is UserControl Then
-                Me.Content = value
+                Content = value
             End If
 
             If value.Header IsNot Nothing Then
-                Me.Header = value.Header
+                Header = value.Header
             Else
-                Me.Header = ReflectionHelpers.GetTypeFriendlyName(value.GetType)
+                Header = ReflectionHelpers.GetTypeFriendlyName(value.GetType)
             End If
 
-            If Me.Content IsNot Nothing AndAlso TypeOf Me.Content Is IViewControl Then
-                AddHandler DirectCast(Me.Content, IViewControl).HeaderUpdated, AddressOf OnContentHeaderChanged
+            If Content IsNot Nothing AndAlso TypeOf Content Is IViewControl Then
+                AddHandler DirectCast(Content, IViewControl).HeaderUpdated, AddressOf OnContentHeaderChanged
             End If
         End Set
     End Property
 
     Private Sub OnContentHeaderChanged(sender As Object, e As HeaderUpdatedEventArgs)
-        Me.Header = e.NewValue
+        Header = e.NewValue
     End Sub
 
 End Class

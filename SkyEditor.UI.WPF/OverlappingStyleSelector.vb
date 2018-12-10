@@ -2,7 +2,6 @@
 Imports System.Windows
 Imports SkyEditor.Core.Utilities
 
-
 Public Class OverlappingStyleSelector
     Inherits Windows.Controls.StyleSelector
 
@@ -24,6 +23,5 @@ Public Class OverlappingStyleSelector
     Public Sub New()
         Styles = New ObservableCollection(Of Style)
     End Sub
+
 End Class
-
-

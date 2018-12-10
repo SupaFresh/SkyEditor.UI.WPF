@@ -1,9 +1,6 @@
-﻿Imports System.Reflection
-Imports System.Windows
+﻿Imports System.Windows
 Imports System.Windows.Controls
-Imports SkyEditor.Core
 Imports SkyEditor.Core.UI
-Imports SkyEditor.Core.Utilities
 
 Public Class WpfUiHelper
 

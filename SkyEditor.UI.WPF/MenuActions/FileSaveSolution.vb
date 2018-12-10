@@ -4,6 +4,7 @@ Imports SkyEditor.Core.Projects
 Imports SkyEditor.Core.UI
 
 Namespace MenuActions
+
     Public Class FileSaveSolution
         Inherits MenuAction
 
@@ -28,5 +29,5 @@ Namespace MenuActions
         End Sub
 
     End Class
-End Namespace
 
+End Namespace

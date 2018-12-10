@@ -6,6 +6,7 @@ Imports SkyEditor.Core.Utilities
 Imports SkyEditor.UI.WPF.ViewModels.Projects
 
 Namespace MenuActions.Context
+
     Public Class ProjectNewFile
         Inherits MenuAction
 
@@ -63,5 +64,5 @@ Namespace MenuActions.Context
         End Function
 
     End Class
-End Namespace
 
+End Namespace

@@ -4,6 +4,7 @@ Imports System.Windows
 Imports SkyEditor.Core.Projects
 
 Namespace ViewModels.Projects
+
     Public MustInherit Class ProjectBaseHeiarchyItemViewModel
         Implements INotifyPropertyChanged
 
@@ -35,11 +36,15 @@ Namespace ViewModels.Projects
         End Sub
 
 #Region "Events"
+
         Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
+
         Private Event CurrentPathChanged()
+
 #End Region
 
 #Region "Properties"
+
         Public Property Project As ProjectBase
             Get
                 Return _project
@@ -49,6 +54,7 @@ Namespace ViewModels.Projects
                 _project = value
             End Set
         End Property
+
         'Not using VB's "WithEvents" keyword, sinc we only want the root node to handle events.
         'It's possible there are thousands of child nodes that we don't want to handle the event.
         'Saying "If IShouldHandleThis" in the handler thousands of times when there's only one node (the root) that should handle it could slow things down.
@@ -63,6 +69,7 @@ Namespace ViewModels.Projects
                 RaiseEvent CurrentPathChanged()
             End Set
         End Property
+
         Dim _currentPath As String
 
         Public Property IsDirectory As Boolean
@@ -73,6 +80,7 @@ Namespace ViewModels.Projects
                 _isDirectory = value
             End Set
         End Property
+
         Dim _isDirectory As Boolean
 
         Public Property Prefix As String
@@ -86,6 +94,7 @@ Namespace ViewModels.Projects
                 End If
             End Set
         End Property
+
         Dim _prefix As String
 
         Public Property Name As String
@@ -100,6 +109,7 @@ Namespace ViewModels.Projects
                 End If
             End Set
         End Property
+
         Dim _name As String
 
         Public Property Parent As ProjectBaseHeiarchyItemViewModel
@@ -118,10 +128,10 @@ Namespace ViewModels.Projects
             End Get
         End Property
 
-
 #End Region
 
 #Region "Event Handlers"
+
         Private Sub ProjectBaseHeiarchyItemViewModel_CurrentPathChanged() Handles Me.CurrentPathChanged
             Name = IO.Path.GetFileName(CurrentPath.TrimEnd(""))
             IsDirectory = Project.DirectoryExists(CurrentPath) 'Assumed to be file if it doesn't exist.
@@ -186,6 +196,7 @@ Namespace ViewModels.Projects
                 AddHandlers()
             End If
         End Sub
+
 #End Region
 
         ''' <summary>
@@ -268,5 +279,5 @@ Namespace ViewModels.Projects
         End Sub
 
     End Class
-End Namespace
 
+End Namespace

@@ -6,6 +6,7 @@ Imports SkyEditor.Core.UI
 Imports SkyEditor.UI.WPF.Settings
 
 Namespace ViewModels
+
     Public Class TextFileViewModel
         Inherits GenericViewModel(Of TextFile)
         Implements INotifyModified
@@ -16,6 +17,7 @@ Namespace ViewModels
         End Sub
 
         Public Event Modified As EventHandler Implements INotifyModified.Modified
+
         Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
 
         Public Property Text As String
@@ -52,4 +54,5 @@ Namespace ViewModels
         End Sub
 
     End Class
+
 End Namespace

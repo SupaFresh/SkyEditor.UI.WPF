@@ -1,6 +1,7 @@
 ﻿Imports System.Windows
 
 Public Class NewNameWindow
+
     Private Sub Button_Click(sender As Object, e As RoutedEventArgs)
         DialogResult = True
         Me.Close()
@@ -27,9 +28,11 @@ Public Class NewNameWindow
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
+
     Public Sub New(Message As String, Title As String)
         Me.New
         Me.Title = Title
         lbGameSelectorQuestion.Content = Message
     End Sub
+
 End Class

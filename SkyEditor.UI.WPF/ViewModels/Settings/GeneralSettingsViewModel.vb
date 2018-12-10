@@ -1,15 +1,15 @@
-﻿Imports System.Reflection
-Imports SkyEditor.Core
-Imports SkyEditor.Core.UI
-Imports SkyEditor.Core.Settings
-Imports SkyEditor.Core.IO
-Imports System.ComponentModel
-Imports SkyEditor.Core.Utilities
+﻿Imports System.ComponentModel
 Imports System.Windows.Forms
-Imports SkyEditor.UI.WPF.Settings
 Imports System.Windows.Input
+Imports SkyEditor.Core
+Imports SkyEditor.Core.IO
+Imports SkyEditor.Core.Settings
+Imports SkyEditor.Core.UI
+Imports SkyEditor.Core.Utilities
+Imports SkyEditor.UI.WPF.Settings
 
 Namespace ViewModels.Settings
+
     Public Class GeneralSettingsViewModel
         Inherits GenericViewModel(Of ISettingsProvider)
         Implements INotifyModified
@@ -58,7 +58,9 @@ Namespace ViewModels.Settings
         Public ReadOnly Property SetFontCommand As ICommand
 
         Public Event FileSaved As EventHandler Implements ISavable.FileSaved
+
         Public Event Modified As EventHandler Implements INotifyModified.Modified
+
         Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
 
         Public Async Function Save(provider As IIOProvider) As Task Implements ISavable.Save
@@ -79,6 +81,7 @@ Namespace ViewModels.Settings
                 RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(NameOf(CurrentFontDisplay)))
             End If
         End Sub
-    End Class
-End Namespace
 
+    End Class
+
+End Namespace

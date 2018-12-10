@@ -2,6 +2,7 @@
 Imports SkyEditor.Core.UI
 
 Namespace MenuActions
+
     Public Class DevPlugins
         Inherits MenuAction
 
@@ -24,5 +25,5 @@ Namespace MenuActions
         End Sub
 
     End Class
-End Namespace
 
+End Namespace

@@ -1,10 +1,10 @@
 ﻿Imports System.Windows
 Imports System.Windows.Controls
-Imports System.Windows.Input
-Imports SkyEditor.Core.UI
 
 Namespace Views
+
     Public Class GenericIList
+
         Private Sub lvItems_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles lvItems.SelectionChanged
             menuDelete.IsEnabled = (lvItems.SelectedItems.Count > 0)
         End Sub
@@ -17,6 +17,7 @@ Namespace Views
                 list.Remove(item)
             Next
         End Sub
-    End Class
-End Namespace
 
+    End Class
+
+End Namespace

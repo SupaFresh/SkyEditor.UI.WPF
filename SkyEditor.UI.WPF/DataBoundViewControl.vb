@@ -2,9 +2,7 @@
 Imports System.Reflection
 Imports System.Windows
 Imports System.Windows.Controls
-Imports SkyEditor.Core
 Imports SkyEditor.Core.UI
-Imports SkyEditor.Core.Utilities
 
 ''' <summary>
 ''' A view that directly supports WPF DataBinding.
@@ -15,13 +13,17 @@ Public Class DataBoundViewControl
     Implements INotifyPropertyChanged
 
 #Region "Dependency Properties"
+
     Public Shared ReadOnly HeaderProperty As DependencyProperty = DependencyProperty.Register(NameOf(Header), GetType(Object), GetType(DataBoundViewControl), New FrameworkPropertyMetadata(AddressOf OnHeaderChanged))
+
     Private Shared Sub OnHeaderChanged(d As DependencyObject, e As DependencyPropertyChangedEventArgs)
         DirectCast(d, DataBoundViewControl).Header = e.NewValue
     End Sub
+
 #End Region
 
 #Region "Events"
+
     ''' <summary>
     ''' Raised when Header is changed.
     ''' </summary>
@@ -33,9 +35,11 @@ Public Class DataBoundViewControl
     Public Event IsModifiedChanged As EventHandler Implements IViewControl.IsModifiedChanged
 
     Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
+
 #End Region
 
 #Region "Properties"
+
     ''' <summary>
     ''' Returns the value of the Header.  Only used when the iObjectControl is behaving as a tab.
     ''' </summary>
@@ -52,6 +56,7 @@ Public Class DataBoundViewControl
             End If
         End Set
     End Property
+
     Dim _header As String
 
     ''' <summary>
@@ -73,6 +78,7 @@ Public Class DataBoundViewControl
             End If
         End Set
     End Property
+
     Dim _isModified As Boolean
 
     ''' <summary>
@@ -81,10 +87,10 @@ Public Class DataBoundViewControl
     ''' <returns></returns>
     Public Overridable Property ViewModel As Object Implements IViewControl.ViewModel
         Get
-            Return Me.DataContext
+            Return DataContext
         End Get
         Set(value As Object)
-            Me.DataContext = value
+            DataContext = value
         End Set
     End Property
 
@@ -103,6 +109,7 @@ Public Class DataBoundViewControl
     ''' If True, this control will not be used if another one exists.
     ''' </summary>
     Public Property IsBackupControl As Boolean
+
 #End Region
 
     ''' <summary>
@@ -140,4 +147,3 @@ Public Class DataBoundViewControl
     End Function
 
 End Class
-

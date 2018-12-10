@@ -1,10 +1,11 @@
-﻿Imports SkyEditor.Core.Projects
-Imports SkyEditor.Core.UI
+﻿Imports SkyEditor.Core
+Imports SkyEditor.Core.Projects
 Imports SkyEditor.Core.Settings
+Imports SkyEditor.Core.UI
 Imports SkyEditor.UI.WPF.ViewModels
-Imports SkyEditor.Core
 
 Namespace MenuActions.View
+
     Public Class MenuViewSolutionBuildProgress
         Inherits MenuAction
 
@@ -26,5 +27,5 @@ Namespace MenuActions.View
         End Sub
 
     End Class
-End Namespace
 
+End Namespace

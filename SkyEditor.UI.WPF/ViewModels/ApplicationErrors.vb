@@ -3,6 +3,7 @@ Imports SkyEditor.Core
 Imports SkyEditor.Core.UI
 
 Namespace ViewModels
+
     Public Class ApplicationErrors
         Inherits AnchorableViewModel
 
@@ -16,5 +17,7 @@ Namespace ViewModels
                 Return CurrentApplicationViewModel.Errors
             End Get
         End Property
+
     End Class
+
 End Namespace

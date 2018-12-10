@@ -39,4 +39,5 @@ Public Class WizardTests
             End Using
         End Using
     End Sub
+
 End Class

@@ -57,6 +57,7 @@ Public Class ErrorWindow
             UpdateExceptionDetailsMessage()
         End Set
     End Property
+
     Private _error As Exception
 
     Private Sub UpdateExceptionDetailsMessage()

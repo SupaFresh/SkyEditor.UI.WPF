@@ -1,4 +1,5 @@
 ﻿Imports System.Windows.Input
+
 ''' <summary>
 ''' A class that can respond to key press event
 ''' </summary>

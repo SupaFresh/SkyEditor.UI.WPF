@@ -3,6 +3,7 @@ Imports SkyEditor.Core
 Imports SkyEditor.Core.UI
 
 Namespace AvalonHelpers
+
     Public Class AvalonDockFileWrapper
         Inherits FileViewModel
         Implements INotifyPropertyChanged
@@ -10,6 +11,7 @@ Namespace AvalonHelpers
         Public Sub New(manager As PluginManager)
             MyBase.New(manager)
         End Sub
+
         Public Sub New(file As Object, manager As PluginManager)
             MyBase.New(file, manager)
         End Sub
@@ -21,5 +23,5 @@ Namespace AvalonHelpers
         End Property
 
     End Class
-End Namespace
 
+End Namespace

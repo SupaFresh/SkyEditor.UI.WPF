@@ -55,7 +55,7 @@ Public Class StartupHelpers
                                    "Original exception: " & originalException.ToString() & vbCrLf &
                                    "Reporting exception: " & secondaryException.ToString() & vbCrLf
 
-                File.WriteAllText("Error-" & DateTime.Now.ToString("YYYY-MM-DD-hh-mm-ss") & ".txt", errorMessage)
+                File.WriteAllText("Error-" & Date.Now.ToString("YYYY-MM-DD-hh-mm-ss") & ".txt", errorMessage)
             End Try
         End Try
     End Function
@@ -78,7 +78,7 @@ Public Class StartupHelpers
         'Set the unhandled exception mode to force all Windows Forms errors to go through our handler.
         Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException)
 
-        'Add the event handler for handling non-UI thread exceptions to the event. 
+        'Add the event handler for handling non-UI thread exceptions to the event.
         AddHandler AppDomain.CurrentDomain.UnhandledException, AddressOf CurrentDomain_UnhandledException
 
         'Listen for WPF binding exceptions
@@ -103,8 +103,8 @@ Public Class StartupHelpers
 
     'Handle the UI exceptions by showing a dialog box, and asking the user whether
     'or not they wish to abort execution.
-    'NOTE: This exception cannot be kept from terminating the application - it can only 
-    'log the event, and inform the user about it. 
+    'NOTE: This exception cannot be kept from terminating the application - it can only
+    'log the event, and inform the user about it.
     Private Shared Sub CurrentDomain_UnhandledException(sender As Object, e As UnhandledExceptionEventArgs)
         Try
             ErrorWindow.ShowErrorDialog(DirectCast(e.ExceptionObject, Exception), True)
@@ -122,12 +122,16 @@ Public Class StartupHelpers
         Public Overrides Sub WriteLine(message As String)
             ErrorWindow.ShowErrorDialog(My.Resources.Language.ErrorHandling_UIThreadErrorMessage, New BindingException(message), True)
         End Sub
+
     End Class
 
     Public Class BindingException
         Inherits Exception
+
         Public Sub New(message As String)
             MyBase.New(message)
         End Sub
+
     End Class
+
 End Class

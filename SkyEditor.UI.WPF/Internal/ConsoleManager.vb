@@ -3,12 +3,16 @@
 'It was also slightly modified to pass Code Analysis tests.
 '
 Imports System.IO
-Imports System.Security
 Imports System.Runtime.InteropServices
+Imports System.Security
+
 Namespace Internal
+
     <SuppressUnmanagedCodeSecurity>
     Friend NotInheritable Class ConsoleManager
+
         Friend Class NativeMethods
+
             <DllImport(Kernel32_DllName)>
             Friend Shared Function AllocConsole() As Boolean
             End Function
@@ -24,9 +28,12 @@ Namespace Internal
             <DllImport(Kernel32_DllName)>
             Friend Shared Function GetConsoleOutputCP() As Integer
             End Function
+
         End Class
+
         Private Sub New()
         End Sub
+
         Private Const Kernel32_DllName As String = "kernel32.dll"
 
         Public Shared ReadOnly Property HasConsole() As Boolean
@@ -91,6 +98,7 @@ Namespace Internal
             Console.SetOut(TextWriter.Null)
             Console.SetError(TextWriter.Null)
         End Sub
+
     End Class
 
 End Namespace

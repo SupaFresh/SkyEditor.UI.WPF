@@ -1,5 +1,4 @@
-﻿Imports System.Reflection
-Imports SkyEditor.Core
+﻿Imports SkyEditor.Core
 Imports SkyEditor.Core.UI
 Imports SkyEditor.UI.WPF.KeyShortcuts
 Imports SkyEditor.UI.WPF.MenuActions
@@ -26,7 +25,9 @@ Public Class WPFCoreSkyEditorPlugin
     Public Sub New(plugin As SkyEditorPlugin)
         _plugin = plugin
     End Sub
+
     Dim _plugin As SkyEditorPlugin
+
     Public Overrides ReadOnly Property Credits As String
         Get
             Return My.Resources.Language.PluginCredits
@@ -48,7 +49,6 @@ Public Class WPFCoreSkyEditorPlugin
     Public Overrides Function CreateApplicationViewModel(manager As PluginManager) As ApplicationViewModel
         Return New WPFApplicationViewModel(manager)
     End Function
-
 
     Public Overrides Sub Load(manager As PluginManager)
         MyBase.Load(manager)

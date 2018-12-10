@@ -54,4 +54,3 @@ Public Class NewFileWindow
     End Function
 
 End Class
-

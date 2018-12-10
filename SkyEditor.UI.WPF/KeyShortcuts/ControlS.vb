@@ -3,6 +3,7 @@ Imports SkyEditor.Core
 Imports SkyEditor.Core.UI
 
 Namespace KeyShortcuts
+
     Public Class ControlS
         Inherits ControlKeyAction
 
@@ -13,7 +14,6 @@ Namespace KeyShortcuts
 
         Protected Property CurrentApplicationViewModel As ApplicationViewModel
         Protected Property CurrentPluginManager As PluginManager
-
 
         Public Overrides ReadOnly Property Keys As Key()
             Get
@@ -56,6 +56,7 @@ Namespace KeyShortcuts
                 Next
             End If
         End Function
-    End Class
-End Namespace
 
+    End Class
+
+End Namespace

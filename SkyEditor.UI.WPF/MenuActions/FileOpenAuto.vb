@@ -1,12 +1,13 @@
-﻿Imports SkyEditor.Core.IO
-Imports SkyEditor.Core.Projects
-Imports SkyEditor.Core.UI
-Imports SkyEditor.Core.Settings
-Imports System.Windows
+﻿Imports System.Windows
 Imports SkyEditor.Core
+Imports SkyEditor.Core.IO
 Imports SkyEditor.Core.IO.PluginInfrastructure
+Imports SkyEditor.Core.Projects
+Imports SkyEditor.Core.Settings
+Imports SkyEditor.Core.UI
 
 Namespace MenuActions
+
     Public Class FileOpenAuto
         Inherits MenuAction
 
@@ -45,5 +46,5 @@ Namespace MenuActions
         End Sub
 
     End Class
-End Namespace
 
+End Namespace

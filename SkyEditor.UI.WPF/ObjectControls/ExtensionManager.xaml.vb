@@ -1,12 +1,11 @@
-﻿Imports System.Reflection
-Imports System.Windows
+﻿Imports System.Windows
 Imports System.Windows.Controls
 Imports System.Windows.Forms
 Imports SkyEditor.Core
 Imports SkyEditor.Core.Extensions
-Imports SkyEditor.Core.Utilities
 
 Namespace ObjectControls
+
     Public Class ExtensionManager
         Inherits DataBoundViewControl
 
@@ -114,6 +113,7 @@ Namespace ObjectControls
                     Forms.MessageBox.Show(My.Resources.Language.ExtensionUninstallUnknownFailure, My.Resources.Language.MainTitle)
             End Select
         End Sub
-    End Class
-End Namespace
 
+    End Class
+
+End Namespace

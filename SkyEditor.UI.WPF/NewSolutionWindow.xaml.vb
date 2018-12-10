@@ -2,13 +2,11 @@
 Imports System.Windows
 Imports System.Windows.Forms
 Imports SkyEditor.Core
-Imports SkyEditor.Core.IO
 Imports SkyEditor.Core.Projects
 Imports SkyEditor.Core.Utilities
 
 Public Class NewSolutionWindow
     Implements IDisposable
-
 
     Public Sub New(pluginManager As PluginManager)
         ' This call is required by the designer.
@@ -58,7 +56,6 @@ Public Class NewSolutionWindow
         End Set
     End Property
 
-
     Private Sub btnBrowse_Click(sender As Object, e As RoutedEventArgs) Handles btnBrowse.Click
         If _folderBrowser.ShowDialog = Forms.DialogResult.OK Then
             txtLocation.Text = _folderBrowser.SelectedPath
@@ -75,16 +72,16 @@ Public Class NewSolutionWindow
         CurrentPluginManager.CurrentSettingsProvider.SetSetting("SkyEditor.Core.Solution.LastSolutionDirectory", txtLocation.Text)
         CurrentPluginManager.CurrentSettingsProvider.Save(CurrentPluginManager.CurrentIOProvider)
         DialogResult = True
-        Me.Close()
+        Close()
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As RoutedEventArgs) Handles btnCancel.Click
         DialogResult = False
-        Me.Close()
+        Close()
     End Sub
 
-
 #Region "IDisposable Support"
+
     Private disposedValue As Boolean ' To detect redundant calls
 
     ' IDisposable
@@ -117,5 +114,7 @@ Public Class NewSolutionWindow
         ' TODO: uncomment the following line if Finalize() is overridden above.
         ' GC.SuppressFinalize(Me)
     End Sub
+
 #End Region
+
 End Class

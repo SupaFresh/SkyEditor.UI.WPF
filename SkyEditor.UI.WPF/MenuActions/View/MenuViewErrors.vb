@@ -1,9 +1,9 @@
 ﻿Imports SkyEditor.Core
-Imports SkyEditor.Core.Projects
 Imports SkyEditor.Core.UI
 Imports SkyEditor.UI.WPF.ViewModels
 
 Namespace MenuActions.View
+
     Public Class MenuViewErrors
         Inherits MenuAction
 
@@ -25,4 +25,5 @@ Namespace MenuActions.View
         End Sub
 
     End Class
+
 End Namespace

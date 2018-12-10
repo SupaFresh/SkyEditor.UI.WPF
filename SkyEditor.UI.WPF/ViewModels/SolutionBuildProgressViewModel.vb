@@ -1,13 +1,13 @@
 ﻿Imports System.Collections.ObjectModel
 Imports System.Windows
 Imports SkyEditor.Core
-Imports SkyEditor.Core.IO
 Imports SkyEditor.Core.Projects
 Imports SkyEditor.Core.UI
 Imports SkyEditor.Core.Utilities
 Imports SkyEditor.UI.WPF.ViewModels.Projects
 
 Namespace ViewModels
+
     Public Class SolutionBuildProgressViewModel
         Inherits AnchorableViewModel
 
@@ -48,6 +48,7 @@ Namespace ViewModels
                                                       End Sub)
             End If
         End Sub
-    End Class
-End Namespace
 
+    End Class
+
+End Namespace

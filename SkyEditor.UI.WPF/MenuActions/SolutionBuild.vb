@@ -1,11 +1,10 @@
 ﻿Imports System.Reflection
-Imports System.Threading.Tasks
 Imports SkyEditor.Core
-Imports SkyEditor.Core.IO
 Imports SkyEditor.Core.Projects
 Imports SkyEditor.Core.UI
 
 Namespace MenuActions
+
     Public Class SolutionBuild
         Inherits MenuAction
 
@@ -30,5 +29,5 @@ Namespace MenuActions
         End Sub
 
     End Class
-End Namespace
 
+End Namespace

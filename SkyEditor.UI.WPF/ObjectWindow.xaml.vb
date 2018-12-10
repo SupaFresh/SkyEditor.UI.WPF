@@ -3,6 +3,7 @@
 Public Class ObjectWindow
 
     Dim _appViewModel As ApplicationViewModel
+
     Public Property ObjectToEdit As Object
         Get
             Return placeholder.ObjectToEdit
@@ -63,6 +64,7 @@ Public Class ObjectWindow
 
         ' Add any initialization after the InitializeComponent() call.
     End Sub
+
     Public Sub New(appViewModel As ApplicationViewModel)
         ' This call is required by the designer.
         InitializeComponent()
@@ -129,4 +131,5 @@ Public Class ObjectWindow
     Public Shadows Function ShowDialog() As Boolean?
         Return MyBase.ShowDialog
     End Function
+
 End Class

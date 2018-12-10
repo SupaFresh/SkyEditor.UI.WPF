@@ -1,9 +1,10 @@
-﻿Imports SkyEditor.Core.Projects
-Imports SkyEditor.Core.UI
+﻿Imports SkyEditor.Core
+Imports SkyEditor.Core.Projects
 Imports SkyEditor.Core.Settings
-Imports SkyEditor.Core
+Imports SkyEditor.Core.UI
 
 Namespace MenuActions
+
     Public Class FileNewSolution
         Inherits MenuAction
 
@@ -44,5 +45,7 @@ Namespace MenuActions
                 End If
             End If
         End Sub
+
     End Class
+
 End Namespace

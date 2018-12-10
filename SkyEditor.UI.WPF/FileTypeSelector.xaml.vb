@@ -2,6 +2,7 @@
 Imports System.Windows
 
 Public Class FileTypeSelector
+
     Private Sub Button_Click(sender As Object, e As RoutedEventArgs)
         DialogResult = True
         Me.Close()
@@ -23,4 +24,5 @@ Public Class FileTypeSelector
     Public Shadows Function ShowDialog() As Boolean
         Return MyBase.ShowDialog
     End Function
+
 End Class

@@ -21,4 +21,5 @@ Public Class AddingWizardTestMenuItem
         Dim wizardForm As New WizardForm(New AddingWizard(CurrentPluginManager), CurrentApplicationViewModel)
         wizardForm.ShowDialog()
     End Sub
+
 End Class

@@ -33,4 +33,5 @@ Public Class CorePlugin
         manager.RegisterType(Of MenuAction, AddingWizardTestMenuItem)()
         manager.RegisterType(Of Solution, AddingSolution)()
     End Sub
+
 End Class

@@ -9,4 +9,5 @@ Class Application
         StartupHelpers.EnableErrorDialog()
         Await StartupHelpers.ShowMainWindow(New CorePlugin)
     End Sub
+
 End Class

@@ -10,21 +10,21 @@
         Icon="Resources\favicon.ico"
         Title="MainWindow3" Height="500.915" Width="520.551">
     <Window.Resources>
-        <ad:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <ad:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="21"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="21" />
+            <RowDefinition Height="*" />
             <RowDefinition Name="statusBarRow" Height="30" /> <!-- This value must be updated in the code-behind if changed. -->
         </Grid.RowDefinitions>
         <Menu x:Name="menuMain" IsMainMenu="True" Grid.Row="0">
             <Menu.ItemContainerStyle>
                 <Style TargetType="MenuItem">
                     <Setter Property="Header" Value="{Binding Header}" />
-                    <Setter Property="Visibility" Value="{Binding IsVisible, Mode=TwoWay, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                    <Setter Property="Visibility" Value="{Binding IsVisible, Mode=TwoWay, Converter={StaticResource BoolToVisibilityConverter}}" />
                     <Setter Property="ItemsSource" Value="{Binding Children}" />
-                    <Setter Property="Command" Value="{Binding Command}"/>
+                    <Setter Property="Command" Value="{Binding Command}" />
                 </Style>
             </Menu.ItemContainerStyle>
         </Menu>
@@ -40,12 +40,12 @@
                 <avalonHelpers:PanesTemplateSelector>
                     <avalonHelpers:PanesTemplateSelector.DocumentTemplate>
                         <DataTemplate DataType="{x:Type avalonHelpers:AvalonDockFileWrapper}">
-                            <coreui:ObjectControlPlaceholder CurrentApplicationViewModel="{Binding Path=CurrentApplicationViewModel,RelativeSource={RelativeSource AncestorType=Window}}" ObjectToEdit="{Binding Model, UpdateSourceTrigger=PropertyChanged}" EnableTabs="True"/>
-                        </DataTemplate>                        
+                            <coreui:ObjectControlPlaceholder CurrentApplicationViewModel="{Binding Path=CurrentApplicationViewModel,RelativeSource={RelativeSource AncestorType=Window}}" ObjectToEdit="{Binding Model, UpdateSourceTrigger=PropertyChanged}" EnableTabs="True" />
+                        </DataTemplate>
                     </avalonHelpers:PanesTemplateSelector.DocumentTemplate>
                     <avalonHelpers:PanesTemplateSelector.AnchorableTemplate>
                         <DataTemplate>
-                            <coreui:ObjectControlPlaceholder CurrentApplicationViewModel="{Binding Path=CurrentApplicationViewModel,RelativeSource={RelativeSource AncestorType=Window}}" ObjectToEdit="{Binding ., UpdateSourceTrigger=PropertyChanged}" EnableTabs="True"/>
+                            <coreui:ObjectControlPlaceholder CurrentApplicationViewModel="{Binding Path=CurrentApplicationViewModel,RelativeSource={RelativeSource AncestorType=Window}}" ObjectToEdit="{Binding ., UpdateSourceTrigger=PropertyChanged}" EnableTabs="True" />
                         </DataTemplate>
                     </avalonHelpers:PanesTemplateSelector.AnchorableTemplate>
                 </avalonHelpers:PanesTemplateSelector>
@@ -69,16 +69,16 @@
             <ad:LayoutRoot>
                 <ad:LayoutPanel Orientation="Vertical">
                     <ad:LayoutPanel Orientation="Horizontal">
-                        <ad:LayoutDocumentPane/>
-                        <ad:LayoutAnchorablePane DockWidth="200"/>
+                        <ad:LayoutDocumentPane />
+                        <ad:LayoutAnchorablePane DockWidth="200" />
                     </ad:LayoutPanel>
-                    <ad:LayoutAnchorablePane DockHeight="200"/>
-                </ad:LayoutPanel>                
+                    <ad:LayoutAnchorablePane DockHeight="200" />
+                </ad:LayoutPanel>
             </ad:LayoutRoot>
         </ad:DockingManager>
         <StatusBar Grid.Row="2">
             <ProgressBar Value="{Binding Progress}" IsIndeterminate="{Binding IsIndeterminate}" Width="100" Height="20" Minimum="0" Maximum="1" />
-            <TextBlock Text="{Binding Message}"/>
+            <TextBlock Text="{Binding Message}" />
         </StatusBar>
     </Grid>
 </Window>

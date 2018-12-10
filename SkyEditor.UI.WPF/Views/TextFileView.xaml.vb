@@ -3,6 +3,7 @@ Imports SkyEditor.UI.WPF.Settings
 Imports SkyEditor.UI.WPF.ViewModels
 
 Namespace Views
+
     Public Class TextFileView
         Inherits DataBoundViewControl
 
@@ -25,10 +26,11 @@ Namespace Views
                 CurrentSettingsProvider.SetFont(currentFont)
 
                 If TypeOf ViewModel Is TextFileViewModel Then
-                    DirectCast(ViewModel, TextFileViewModel).RefreshFont
+                    DirectCast(ViewModel, TextFileViewModel).RefreshFont()
                 End If
             End If
         End Sub
-    End Class
-End Namespace
 
+    End Class
+
+End Namespace

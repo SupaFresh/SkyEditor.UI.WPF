@@ -1,9 +1,8 @@
-﻿Imports System.Threading.Tasks
-Imports SkyEditor.Core
-Imports SkyEditor.Core.ConsoleCommands
+﻿Imports SkyEditor.Core
 Imports SkyEditor.Core.UI
 
 Namespace MenuActions
+
     Public Class DevConsole
         Inherits MenuAction
 
@@ -24,5 +23,5 @@ Namespace MenuActions
         End Sub
 
     End Class
-End Namespace
 
+End Namespace

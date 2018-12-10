@@ -1,10 +1,9 @@
-﻿Imports System.Threading.Tasks
-Imports SkyEditor.Core
+﻿Imports SkyEditor.Core
 Imports SkyEditor.Core.UI
-Imports SkyEditor.UI.WPF.ViewModels
 Imports SkyEditor.UI.WPF.ViewModels.Settings
 
 Namespace MenuActions
+
     Public Class ToolsSettings
         Inherits MenuAction
 
@@ -26,5 +25,5 @@ Namespace MenuActions
         End Sub
 
     End Class
-End Namespace
 
+End Namespace

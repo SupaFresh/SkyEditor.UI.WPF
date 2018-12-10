@@ -1,6 +1,7 @@
 ﻿Imports SkyEditor.Core.Projects
 
 Namespace ViewModels.Projects
+
     Public Class SolutionHeiarchyItemViewModel
         Inherits ProjectBaseHeiarchyItemViewModel
 
@@ -69,5 +70,7 @@ Namespace ViewModels.Projects
                 End If
             End If
         End Sub
+
     End Class
+
 End Namespace

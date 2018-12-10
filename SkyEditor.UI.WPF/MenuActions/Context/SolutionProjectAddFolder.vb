@@ -4,6 +4,7 @@ Imports SkyEditor.Core.UI
 Imports SkyEditor.UI.WPF.ViewModels.Projects
 
 Namespace MenuActions.Context
+
     Public Class SolutionProjectAddFolder
         Inherits MenuAction
 

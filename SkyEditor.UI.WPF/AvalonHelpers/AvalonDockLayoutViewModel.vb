@@ -2,12 +2,11 @@
 Imports System.Reflection
 Imports System.Windows.Input
 Imports SkyEditor.Core
-Imports SkyEditor.Core.IO
 Imports SkyEditor.Core.UI
 Imports SkyEditor.Core.Utilities
-Imports SkyEditor.UI.WPF.AvalonHelpers
 Imports Xceed.Wpf.AvalonDock
 Imports Xceed.Wpf.AvalonDock.Layout.Serialization
+
 Namespace AvalonHelpers
 
     ''' <summary>
@@ -24,19 +23,23 @@ Namespace AvalonHelpers
             Me.CurrentApplicationViewModel = appViewModel
             Me.CurrentPluginManager = pluginManager
         End Sub
+
 #Region "fields"
+
         Private mLoadLayoutCommand As RelayCommand = Nothing
         Private mSaveLayoutCommand As RelayCommand = Nothing
         Protected Property CurrentApplicationViewModel As ApplicationViewModel
         Protected Property CurrentPluginManager As PluginManager
+
 #End Region
 
 #Region "command properties"
+
         ''' <summary>
         ''' Implement a command to load the layout of an AvalonDock-DockingManager instance.
         ''' This layout defines the position and shape of each document and tool window
         ''' displayed in the application.
-        ''' 
+        '''
         ''' Parameter:
         ''' The command expects a reference to a <seealso cref="DockingManager"/> instance to
         ''' work correctly. Not supplying that reference results in not loading a layout (silent return).
@@ -62,7 +65,7 @@ Namespace AvalonHelpers
         ''' Implements a command to save the layout of an AvalonDock-DockingManager instance.
         ''' This layout defines the position and shape of each document and tool window
         ''' displayed in the application.
-        ''' 
+        '''
         ''' Parameter:
         ''' The command expects a reference to a <seealso cref="String"/> instance to
         ''' work correctly. The string is supposed to contain the XML layout persisted
@@ -85,10 +88,13 @@ Namespace AvalonHelpers
                 Return Me.mSaveLayoutCommand
             End Get
         End Property
+
 #End Region
 
 #Region "methods"
+
 #Region "LoadLayout"
+
         ''' <summary>
         ''' Loads the layout of a particular docking manager instance from persistence
         ''' and checks whether a file should really be reloaded (some files may no longer
@@ -166,9 +172,11 @@ Namespace AvalonHelpers
 
         '    Return ret
         'End Function
+
 #End Region
 
 #Region "SaveLayout"
+
         Private Sub SaveDockingManagerLayout(xmlLayout As String)
             ' Create XML Layout file on close application (for re-load on application re-start)
             If xmlLayout IsNot Nothing Then
@@ -177,9 +185,13 @@ Namespace AvalonHelpers
                 File.WriteAllText(fileName, xmlLayout)
             End If
         End Sub
+
 #End Region
+
 #End Region
+
     End Class
+
 End Namespace
 
 '=======================================================

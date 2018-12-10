@@ -4,13 +4,11 @@ Imports System.Reflection
 Imports System.Windows
 Imports System.Windows.Input
 Imports SkyEditor.Core
-Imports SkyEditor.Core.IO
-Imports SkyEditor.Core.Projects
 Imports SkyEditor.Core.UI
-Imports SkyEditor.Core.Utilities
 Imports SkyEditor.UI.WPF.Settings
 
 Public Class MainWindow3
+
     Public Sub New()
 
         ' This call is required by the designer.
@@ -25,6 +23,7 @@ Public Class MainWindow3
     End Sub
 
 #Region "Properties"
+
     Public Property DisplayStatusBar As Boolean
         Get
             Return statusBarRow.Height.Value > 0
@@ -39,7 +38,7 @@ Public Class MainWindow3
     End Property
 
     ''' <summary>
-    ''' 
+    '''
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks>Currently, this window only supports plugin managers that have a WPFIOUIManager as the CurrentIOUIManager</remarks>
@@ -52,16 +51,17 @@ Public Class MainWindow3
             DataContext = value
         End Set
     End Property
+
     Private WithEvents _currentApplicationViewModel As WPFApplicationViewModel
 
     Public Property CurrentPluginManager As PluginManager
-
 
     ''' <summary>
     ''' If true, application will be restarted when the form is closed.
     ''' </summary>
     ''' <returns></returns>
     Private Property RestartOnExit As Boolean
+
 #End Region
 
 #Region "Event Handlers"

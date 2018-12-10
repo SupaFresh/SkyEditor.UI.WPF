@@ -1,12 +1,11 @@
 ﻿Imports System.Collections.ObjectModel
 Imports SkyEditor.Core
-Imports SkyEditor.Core.IO
-Imports SkyEditor.Core.Projects
 Imports SkyEditor.Core.UI
 Imports SkyEditor.UI.WPF.MenuActions.Context
 Imports SkyEditor.UI.WPF.ViewModels.Projects
 
 Namespace ViewModels
+
     Public Class SolutionExplorerViewModel
         Inherits AnchorableViewModel
 
@@ -32,6 +31,7 @@ Namespace ViewModels
             SolutionRoots.Clear()
             SolutionRoots.Add(New SolutionHeiarchyItemViewModel(CurrentApplicationViewModel.CurrentSolution))
         End Sub
+
     End Class
 
 End Namespace
